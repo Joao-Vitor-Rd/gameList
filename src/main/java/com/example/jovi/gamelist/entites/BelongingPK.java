@@ -2,8 +2,6 @@ package com.example.jovi.gamelist.entites;
 
 import java.util.Objects;
 
-import org.hibernate.annotations.ManyToAny;
-
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;

@@ -1,27 +1,19 @@
-package com.example.jovi.gamelist.entites;
+package com.example.jovi.gamelist.DTO;
 
 import java.util.Objects;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.beans.BeanUtils;
 
-@Entity
-@Table(name = "tb_game_list")
-public class GameList {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+import com.example.jovi.gamelist.entites.GameList;
+
+public class GameListDto {
 	private Long id;
 	private String name;
 	
-	public GameList() {}
-
-	public GameList(Long id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
+	public GameListDto() {}
+	
+	public GameListDto(GameList entity) {
+		BeanUtils.copyProperties(entity, this);
 	}
 
 	public Long getId() {
@@ -53,9 +45,10 @@ public class GameList {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		GameList other = (GameList) obj;
+		GameListDto other = (GameListDto) obj;
 		return Objects.equals(id, other.id);
 	}
+	
 	
 	
 }
