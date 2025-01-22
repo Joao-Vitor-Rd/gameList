@@ -1,6 +1,9 @@
 package com.example.jovi.gamelist.DTO;
 
+import org.springframework.beans.BeanUtils;
+
 import com.example.jovi.gamelist.entites.Game;
+import com.example.jovi.gamelist.projections.GameMinProjection;
 
 public class GameMinDto {
 	private Long id;
@@ -19,6 +22,10 @@ public class GameMinDto {
 		this.imgUrl = entity.getImgUrl();
 		this.shortDescription = entity.getShortDescription();
 	}
+	public GameMinDto(GameMinProjection projection) {
+		BeanUtils.copyProperties(projection, this);
+	}
+
 	public Long getId() {
 		return id;
 	}
