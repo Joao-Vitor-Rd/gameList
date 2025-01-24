@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.jovi.gamelist.DTO.GameDto;
 import com.example.jovi.gamelist.DTO.GameMinDto;
-import com.example.jovi.gamelist.entites.Game;
 import com.example.jovi.gamelist.servicies.GameService;
 
 @RestController
